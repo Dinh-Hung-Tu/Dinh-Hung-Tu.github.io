@@ -23,7 +23,9 @@ a:hover {
 	position: relative;
 	top: 25px;
 	left: 460px;
-	width: 520px;
+	<!--width: 520px-->;
+	width: inherit;
+	height: inherit;
 }
 
 .title {
