@@ -1,5 +1,6 @@
 <html>
 <head>
+<link rel="stylesheet" title="screen stylesheet" type="text/css" media="screen" href="style.css" />
 <title>GRE Writing</title>
 <script src="gre.js"></script>
 <script>
@@ -30,22 +31,29 @@ xmlhttp.send();
 </script>
 </head>
 <body onload="show();">
-<h1>GRE Analytical Writing: On the way to get 4.5 Writing !</h1>
+<h3>GRE Analytical Writing</h3>
+<h3>On the way to get 4.5 Writing !</h3>
 <p>Practice makes perfect!</p>
-<input type="button" value="Start timing" id="startButton" onclick="start();">	
-<div>Time remaining: <span id="time"></span></div>
-Name:<input type="text" name="name" >
-Email:<input type="string" name="Email" ></br>
+<input type="button" value="START" id="startButton" onclick="start();">	
+</br>
+</br>
+<div>Time remaining: [--:--]<span id="time"></span></div>
+</br>
+Name <input type="text" name="name" ></br>
+</br>
+Email <input type="string" name="Email" ></br>
+</br>
 <!This is a comment>
 <form action="MAILTO:dinhhungtu@gmail.com?Subject=GRE%20Essay%20Submission"  method="post" id="ismForm" name="ismForm" enctype="text/plain">
-<div id="main"><p>Question will be unveiled here after Start is clicked...</p></div>
+<div id="main"><p>[...Writing prompt will be unveiled here...]</p></div>
 
-Your Response:<br>
-<textarea id="mytext" name="Essay" cols="150" rows="20" spellcheck="false" disabled = "disabled">
+Type your response on the canvas--><br>
+<textarea id="mytext" name="Essay" cols="120" rows="30" spellcheck="false" disabled = "disabled">
 Please enable this writing window by clicking Start button above. 
 </textarea>
 <p></p>
-If you finish the essay before time limit expires, you may submit by clicking the button below:<br>
+If you finish the essay before time limit expires, </br>
+you may submit by clicking the button below:</br></br>
 <input type="submit" id = "submitButton" value="Email your response" ></br>
 </form>
 </body>
