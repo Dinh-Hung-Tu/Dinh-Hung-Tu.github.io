@@ -77,3 +77,10 @@ h3 {
     display: none;
 
 }
+textarea {
+  position: absolute;
+  left: 400px; 
+  top: 50px;
+  right: 50px; 
+  bottom: 50px;
+}
