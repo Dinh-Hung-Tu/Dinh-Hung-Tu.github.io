@@ -17,7 +17,10 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    text = xmlhttp.responseText;
+    output=text.split('<div class="divider-50">');
+    var item = output[Math.floor(Math.random()*output.length)];
+    document.getElementById("myDiv").innerHTML = item;
     }
   }
 xmlhttp.open("GET","pool.txt",true);
