@@ -96,6 +96,7 @@ function update() {
 }
 
 function start() {
+	loadXMLDoc();
 	clocktimer = setInterval("update()", 1);	
 	x.start();
 	mytext.disabled=false;
