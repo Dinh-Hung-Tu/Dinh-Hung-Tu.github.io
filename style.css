@@ -9,8 +9,8 @@ body {
 	color: #003300;
 	margin: 0px;
 	background-image:url('bg_4.jpg');
-	background-repeat:no-repeat;
-	background-size:100% 200%;
+	background-repeat:repeat-y;
+	background-size:cover;
 }
 
 a {
