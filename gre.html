@@ -37,7 +37,7 @@ xmlhttp.send();
 <input type="button" value="START" id="startButton" onclick="start();">	
 </br>
 </br>
-<div>Time remaining: [--:--]<span id="time"></span></div>
+<div>Time remaining: <span id="time"></span></div>
 </br>
 Name <input type="text" name="name" ></br>
 </br>
@@ -45,11 +45,15 @@ Email <input type="string" name="Email" ></br>
 </br>
 <!This is a comment>
 <form action="MAILTO:dinhhungtu@gmail.com?Subject=GRE%20Essay%20Submission"  method="post" id="ismForm" name="ismForm" enctype="text/plain">
-<div id="main"><p>[...Writing prompt will be unveiled here...]</p></div>
-
-Type your response on the canvas--><br>
+<div id="main">
+    {
+    width: 200px;
+    word-wrap: break-word;
+    <p>[...Writing prompt will be unveiled here...]</p>
+    }
+    </div>
 <textarea id="mytext" name="Essay" cols="120" rows="30" spellcheck="false" disabled = "disabled">
-Please enable this writing window by clicking Start button above. 
+Enter your response in this canvas. 
 </textarea>
 <p></p>
 If you finish the essay before time limit expires, </br>
