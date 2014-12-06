@@ -34,7 +34,9 @@
 			text = xmlhttp.responseText;
 			ques_bank=text.split('\n');			
 			var population = Array.apply(null, {length: ques_bank.length}).map(Number.call, Number)
-			var question_indexes = _.sample(population, total_questions); //till here, a set of unique question indexes is chosen.						
+			question_indexes = _.sample(population, total_questions); //till here, a set of unique question indexes is chosen.						
+			var item = ques_bank[1];
+			document.getElementById('main').innerHTML = item;
 			}
 		  }
 		xmlhttp.open("GET","wordlist.txt",true);
