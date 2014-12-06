@@ -14,7 +14,7 @@ body {
 }
 
 a {
-	color: #000080;
+	color: #0000FF;
 	text-decoration: none;
 }
 a:hover {
@@ -27,6 +27,11 @@ a:hover {
 	top: 25px;
 	left: 30%;
 	width: 40%;
+}
+.lang
+{
+	text-align: right;	
+	float: right		
 }
 
 .title {
@@ -93,3 +98,4 @@ textarea {
   right: 10%; 
   bottom: 5%;
 }
+
