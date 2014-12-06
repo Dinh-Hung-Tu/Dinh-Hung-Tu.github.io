@@ -6,19 +6,20 @@ body {
 	font-size: 1em;
 	max-width: 100%;
 	max-height: 100%;
-	color: #003300;
+	color: #000000;
 	margin: 0px;
-	background-image:url('bg_4.jpg');
+	background-image:url('plane.png');
 	background-repeat:repeat-y;
 	background-size:cover;
 }
 
 a {
-	color: #003300;
+	color: #000080;
 	text-decoration: none;
 }
 a:hover {
-	color: #ffffff;
+	color: #DC143C;
+	text-decoration: underline;
 }
 
 #contain {
@@ -30,7 +31,7 @@ a:hover {
 
 .title {
 	font: 3em Georgia, "Times New Roman", Times, serif;
-	color:#FF4500;
+	color:#FF0000;
 	padding-top: 60px;
 }
 
@@ -60,7 +61,7 @@ a:hover {
 h3 {
 	clear:both; 
 	margin:10px 0 10px 0; 
-	color:#800000; 
+	color:#FF0000; 
 	font-weight:normal; 
 	font-size: 1.5em; 
 	letter-spacing:-2px;
@@ -73,10 +74,13 @@ p.main {
 	clear: both;
 	position: relative;
 	top: 20px;
-	padding-top: 3px;
+	padding-top: 10px;
 	border-top: 1px solid #cbcd65;
 	font-size: .75em;
-	text-align: right;
+	text-align: center;
+}
+.logo{
+	color: #FF0000;
 }
 .morecontent span {
     display: none;
