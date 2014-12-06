@@ -6,6 +6,7 @@
 <script>
 	// Global variables are accessible by any functions below 
 	var total_questions = 10;
+	var ques_bank;
 	var question_indexes = new Array(total_questions);//create a total_questions element array
 	
 	// Call the load XML Document
@@ -31,8 +32,8 @@
 		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 			{
 			text = xmlhttp.responseText;
-			output=text.split('\n');			
-			var population = Array.apply(null, {length: output.length}).map(Number.call, Number)
+			ques_bank=text.split('\n');			
+			var population = Array.apply(null, {length: ques_bank.length}).map(Number.call, Number)
 			var question_indexes = _.sample(population, total_questions); //till here, a set of unique question indexes is chosen.						
 			}
 		  }
@@ -40,7 +41,7 @@
 		xmlhttp.send();
 	}
 	function question_display(i){ // This function accept the question order. From this question order, access the question_indexes array to identify the question
-		var item = output[question_indexes[i]];
+		var item = ques_bank[question_indexes[i]];
 		document.getElementById('main').innerHTML = item;
 	}
 
