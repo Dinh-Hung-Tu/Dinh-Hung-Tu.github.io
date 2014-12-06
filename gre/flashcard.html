@@ -3,6 +3,10 @@
 <title>Flashcard</title>
 
 <script>
+	function start()
+	{
+	loadXMLDoc();
+	}
 	function loadXMLDoc() //create dynamic content of the questions
 	{
 	var xmlhttp;
@@ -32,7 +36,7 @@
 </head>
 <body>
 <h1>Hello World!</h1>
-
+<input type="button" value="START" id="startButton" onclick="start();">	
 <div id="main">
     <p class = "main">[...Word Pair will be unveiled here...]</p>
     </div>
