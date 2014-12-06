@@ -6,6 +6,7 @@
 <script>
 	// Global variables are accessible by any functions below 
 	var total_questions = 10;
+	var current = 0;
 	
 	//var question_indexes = new Array(total_questions);//create a total_questions element array
 	
@@ -42,9 +43,13 @@
 		xmlhttp.open("GET","wordlist.txt",true);
 		xmlhttp.send();
 	}
-	function question_display(i){ // This function accept the question order. From this question order, access the question_indexes array to identify the question
-		var item = ques_bank[question_indexes[i]];
-		document.getElementById('main').innerHTML = item;
+	function question_display(){ // this function accepts no argument, it will repeat until current reach the max number of questions
+		if (current < total_questions)// access the question_indexes array to identify the question
+		{
+			var item = ques_bank[question_indexes[current]];
+			document.getElementById('main').innerHTML = item;
+			current = current + 1;
+			}
 	}
 
 </script>
