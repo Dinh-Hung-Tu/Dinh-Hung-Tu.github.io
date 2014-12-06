@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Flashcard</title>
+<script src="flashcard.js"></script>
+<script>
+	function loadXMLDoc() //create dynamic content of the questions
+	{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		text = xmlhttp.responseText;
+		output=text.split('\n');
+		var item = output[Math.floor(Math.random()*output.length)];
+		document.getElementById('main').innerHTML = item;
+		}
+	  }
+	xmlhttp.open("GET","wordlist.csv",true);
+	xmlhttp.send();
+	}
+</script>
+</script>
+</head>
+<body>
+<h1>Hello World!</h1>
+
+<div id="main">
+    <p class = "main">[...Word Pair will be unveiled here...]</p>
+    </div>
+Welcome to GRE Flashcard
+Designed by Hung Tu
+
+</body>
+</html>
