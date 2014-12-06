@@ -33,7 +33,7 @@
 			text = xmlhttp.responseText;
 			output=text.split('\n');			
 			var population = Array.apply(null, {length: output.length}).map(Number.call, Number)
-			var question_indexes = _.sample(x, total_questions); //till here, a set of unique question indexes is chosen.						
+			var question_indexes = _.sample(population, total_questions); //till here, a set of unique question indexes is chosen.						
 			}
 		  }
 		xmlhttp.open("GET","wordlist.txt",true);
