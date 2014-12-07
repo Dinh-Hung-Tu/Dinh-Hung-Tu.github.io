@@ -37,7 +37,7 @@ function loadXMLDoc() //create dynamic content of the questions
 	  }
 	xmlhttp.onreadystatechange=function()
 	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200) //after loading
 		{
 		var text = xmlhttp.responseText; //text is a local variable. It takes effect only within this function's scope
 		
@@ -46,10 +46,11 @@ function loadXMLDoc() //create dynamic content of the questions
 		//randomly sample 30 unique prompts (=prompts per question x total_questions) 
 		all_prompts_indexes = _.sample(population, prompts_per_question*total_questions); //till here, a set of unique question indexes is chosen.									
 		}
+		question_display(); //only display the question after loading
 	  }
 	xmlhttp.open("GET","wordlist.txt",true);
 	xmlhttp.send();
-	question_display();
+	
 }
 //Display question, one by one
 function question_display(){ // this function accepts no argument, it will repeat until current reach the max number of questions
