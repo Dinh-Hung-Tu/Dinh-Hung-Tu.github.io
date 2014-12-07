@@ -13,8 +13,7 @@ function start()
 	loadXMLDoc(); //Activate this line when running up in the server. Deactivate the line below
 	//local(); //Activate this line to process local sample. Deactivate the line above
 	current = 0; //after every restart, reset the current counter to zero		
-	nextButton.disabled = false; 
-	question_display();
+	nextButton.disabled = false; 	
 }
 
 function local() //This function is used to run locally on the client side
@@ -51,6 +50,7 @@ function loadXMLDoc() //create dynamic content of the questions
 	  }
 	xmlhttp.open("GET","wordlist.txt",true);
 	xmlhttp.send();
+	question_display();
 }
 //Display question, one by one
 function question_display(){ // this function accepts no argument, it will repeat until current reach the max number of questions
