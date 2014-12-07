@@ -11,11 +11,8 @@ window.onload = function()
  {				
 	var select = document.getElementById("my_select")
 	output = document.getElementById("output")			
-	total_questions = select.options[select.selectedIndex].value;
-	}			
-	select.onchange = function(){
-		start();	
-	};
+	total_questions = select.options[select.selectedIndex].value;				
+	select.onchange = function(){start();};
  };	
 
 // Call the load XML Document
