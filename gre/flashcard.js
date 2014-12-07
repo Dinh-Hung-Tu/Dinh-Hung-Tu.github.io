@@ -48,7 +48,7 @@ function local() //This function is used to run locally on the client side
 // Load XML: This function returns two global variables: ques_bank and all_prompts_indexes (including unique stems and distractors)
 function loadXMLDoc() //create dynamic content of the questions
 {
-	initialization()
+	initialization();
 	var xmlhttp;
 	current = 0; //after every restart, reset the current counter to zero		
 	if (window.XMLHttpRequest)
