@@ -48,6 +48,7 @@ function local() //This function is used to run locally on the client side
 // Load XML: This function returns two global variables: ques_bank and all_prompts_indexes (including unique stems and distractors)
 function loadXMLDoc() //create dynamic content of the questions
 {
+	initialization()
 	var xmlhttp;
 	current = 0; //after every restart, reset the current counter to zero		
 	if (window.XMLHttpRequest)
@@ -67,6 +68,7 @@ function loadXMLDoc() //create dynamic content of the questions
 	  }
 	xmlhttp.open("GET","wordlist.txt",true);
 	xmlhttp.send();	
+}
 }
 
 //Display question, one by one
@@ -127,8 +129,7 @@ function submit()
 }
 //Initialization upon page load
 function initialization()
-{	
-	start();
+{		
 	document.getElementById('quiz').style.visibility="hidden";
 	submitButton.disabled = true;
 	nextButton.disabled = true;
