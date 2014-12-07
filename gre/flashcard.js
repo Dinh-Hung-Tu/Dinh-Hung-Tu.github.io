@@ -6,11 +6,10 @@ var current = 0;
 var prompts_per_question = 3;
 var all_prompts_indexes = new Array(30);
 var answer = prompts_per_question; // Legitimate range for answer is (0<= to < prompts_per_question). Set this to be prompts_per_question means that there is no answer chosen	
-
-
+var ques_bank;
 
 window.onload = function()
- {			 				
+ {				
 	var select = document.getElementById("my_select")
 	output = document.getElementById("output")	
 	confirmation();
@@ -22,7 +21,8 @@ window.onload = function()
 	}			
 	select.onchange = function(){
 		confirmation();
-		loadXMLDoc(); //Reset the population 
+		start();
+		//loadXMLDoc(); //Reset the population 
 	};
  };	
 
@@ -31,6 +31,10 @@ function start()
 {	loadXMLDoc(); //Activate this line when running up in the server. Deactivate the line below	
 	//local(); //Activate this line to process local sample. Deactivate the line above	
 	nextButton.disabled = false; 	
+	document.getElementById('quiz').style.visibility="visible"; //activate the 	
+	correct_count = 0;
+	current = 0;
+	question_display();
 }
 
 function local() //This function is used to run locally on the client side
@@ -137,8 +141,8 @@ function submit()
 
 //Initialization upon page load
 function initialization()
-{
-	loadXMLDoc(); //Activate this line when running up in the server. Deactivate the line below
+{	
+	start();
 	document.getElementById('quiz').style.visibility="hidden";
 	submitButton.disabled = true;
 	nextButton.disabled = true;
