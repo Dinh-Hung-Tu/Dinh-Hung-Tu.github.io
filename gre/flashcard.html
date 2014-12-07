@@ -1,69 +1,51 @@
-<html>
+﻿<html>
 <head>
+<link rel="stylesheet" title="screen stylesheet" type="text/css" media="screen" href="../style.css" />
 <title>Flashcard</title>
 <script src="underscore-min.js"></script>
-
-<script>
-	// Global variables are accessible by any functions below 
-	var total_questions = 10;
-	var current = 0;
-	
-	//var question_indexes = new Array(total_questions);//create a total_questions element array
-	
-	// Call the load XML Document
-	function start()
-	{
-		loadXMLDoc();
-	}
-	
-	// Load XML
-	function loadXMLDoc() //create dynamic content of the questions
-	{
-		var xmlhttp;
-		if (window.XMLHttpRequest)
-		  {// code for IE7+, Firefox, Chrome, Opera, Safari
-		  xmlhttp=new XMLHttpRequest();
-		  }
-		else
-		  {// code for IE6, IE5
-		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-		  }
-		xmlhttp.onreadystatechange=function()
-		  {
-		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-			{
-			text = xmlhttp.responseText;
-			ques_bank=text.split('\n');		//If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.	
-			var population = Array.apply(null, {length: ques_bank.length}).map(Number.call, Number)
-			question_indexes = _.sample(population, total_questions); //till here, a set of unique question indexes is chosen.						
-			var item = ques_bank[1];
-			document.getElementById('main').innerHTML = item; //Conclusion: till here ok! but can not retain the value 
-			}
-		  }
-		xmlhttp.open("GET","wordlist.txt",true);
-		xmlhttp.send();
-	}
-	function question_display(){ // this function accepts no argument, it will repeat until current reach the max number of questions
-		if (current < total_questions)// access the question_indexes array to identify the question
-		{
-			var item = ques_bank[question_indexes[current]];
-			document.getElementById('main').innerHTML = item;
-			current = current + 1;
-			}
-	}
-
-</script>
-</script>
+<script src="flashcard.js"></script> 
 </head>
-<body>
-<h1>Hello World!</h1>
-<input type="button" value="START" id="startButton" onclick="start();">	
-<input type="button" value="NEXT" id="startButton" onclick="question_display();">	
-<div id="main">
-    <p class = "main">[...Word Pair will be unveiled here...]</p>
-    </div>
-Welcome to GRE Flashcard
-Designed by Hung Tu
+<body onload="initialization();">
+<div id="contain">
+	<a href="../index.html"> <img src = "../US.png" alt ="English" style = "float:right;width:30px;height:30px"></a>
+	<a href="../vi/index.html"> <img src = "../VI.png" alt = "Tiếng Việt" style = "float:right;width:30px;height:30px"></a>
+<div class="title">
+	Tu's Studio
+</div>
+<div class="menu">
+	<a href=../index.html>Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=../index.html>App Galleries</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=../blog.html>Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=../aboutme.html>About me</a>
+</div>
 
+<div class="bouquet">
+	<div class="hollyhack">
+	<h3>Vocabulary Quiz</h3>
+	
+<input type="button" value="START" id="startButton" onclick="start();" style="height:20px; width:100px">	<br><br>
+
+<form id = "quiz" class = "border" method="POST" name="myquiz">
+
+<span id = "order"></span><br>
+<div id="main"> 
+    <p class = "main"></p><br><br>
+    </div>	
+	<input type="radio" value="0" name="question1"> <span id = "0"></span><br>
+	<input type="radio" value="1" name="question1"> <span id = "1"></span><br>
+	<input type="radio" value="2" name="question1"> <span id = "2"></span><br>
+</form> 
+<input type="button" value="SUBMIT" id="submitButton" onclick="submit();" style="height:20px; width:100px">	
+<input type="button" value="NEXT" id="nextButton" onclick="question_display();" style="height:20px; width:100px">	
+</br>
+<span id = "result"></span><br>
+<br>
+<br>
+<div class="footer">
+  <a href="../aboutme.html#copyright" target="_blank">&#169 Copyright <span class = logo> Tu's Studio</span> </a>
+  </br>
+  </br>  
+</div>
+</div>
+
+</div> <!hollyhack>
+</div> <!bouquet>
 </body>
 </html>

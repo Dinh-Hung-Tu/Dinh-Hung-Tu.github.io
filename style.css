@@ -75,6 +75,12 @@ p.main {
 	text-align: justify;
 }
 
+form.border{
+    border-style: solid;
+    border-color: #98bf21;
+	line-height: 1.6em;			
+}
+
 .footer {
 	clear: both;
 	position: relative;
