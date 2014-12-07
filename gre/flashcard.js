@@ -38,9 +38,7 @@ function start()
 	//Resample the question + distractor set
 	var population = Array.apply(null, {length: ques_bank.length}).map(Number.call, Number) //Array of 30 elements from 0:29. This should be here because the length of the polution is mutable
 	//randomly sample 30 unique prompts (=prompts per question x total_questions) 
-	all_prompts_indexes = _.sample(population, prompts_per_question*total_questions); //till here, a set of unique question indexes is chosen.									
-	}
-		
+	all_prompts_indexes = _.sample(population, prompts_per_question*total_questions); //till here, a set of unique question indexes is chosen.												
 	question_display(); //only display the question after loading
 }
 
