@@ -66,17 +66,17 @@ function loadXMLDoc() //create dynamic content of the questions
 	  {// code for IE6, IE5
 	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	  }
-	xmlhttp.onreadystatechange=function()
-	  {
+	xmlhttp.onreadystatechange=function()	  
+	{
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200) //after loading
 		{
 		var text = xmlhttp.responseText; //text is a local variable. It takes effect only within this function's scope		
 		ques_bank=text.split('\n');		//If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.														
 		document.getElementById('status').innerHTML = "Question bank is successfully loaded."; //Clear last result display
 	  }
+	}
 	xmlhttp.open("GET","wordlist.txt",true);
 	xmlhttp.send();	
-}
 }
 
 //Display question, one by one
