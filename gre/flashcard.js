@@ -10,16 +10,10 @@ var ques_bank;
 window.onload = function()
  {				
 	var select = document.getElementById("my_select")
-	output = document.getElementById("output")	
-	confirmation();
-	function confirmation(){
-		total_questions = select.options[select.selectedIndex].value;
-		if(total_questions) {
-		  output.innerHTML = total_questions.toString();
-		}	
+	output = document.getElementById("output")			
+	total_questions = select.options[select.selectedIndex].value;
 	}			
 	select.onchange = function(){
-		confirmation();
 		start();	
 	};
  };	
