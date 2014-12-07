@@ -1,5 +1,6 @@
 ﻿<html>
 <head>
+<link rel="shortcut icon" href="../favicon.ico" >
 <link rel="stylesheet" title="screen stylesheet" type="text/css" media="screen" href="../style.css" />
 <title>Flashcard</title>
 <script src="underscore-min.js"></script>
@@ -20,7 +21,17 @@
 	<div class="hollyhack">
 	<h3>Vocabulary Quiz</h3>
 	
-<input type="button" value="START" id="startButton" onclick="start();" style="height:20px; width:100px">	<br><br>
+<input type="button" value="START" id="startButton" onclick="start();" style="height:20px; width:100px">	
+<div style ="float:right">
+<span class = "test_size" > Number of questions: </span>  <span id="output"></span>
+
+<select name="my_select" id="my_select">
+	<option value=2>2</option>
+	<option value=10>10</option>
+	<option value=20>20</option>
+</select>
+</div>
+<br><br>
 
 <form id = "quiz" class = "border" method="POST" name="myquiz">
 

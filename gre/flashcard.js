@@ -1,11 +1,28 @@
 
 // Global variables are accessible by any functions below 
-var total_questions = 2;
+var total_questions;
 var correct_count = 0;
 var current = 0;
 var prompts_per_question = 3;
 var all_prompts_indexes = new Array(30);
 var answer = prompts_per_question; // Legitimate range for answer is (0<= to < prompts_per_question). Set this to be prompts_per_question means that there is no answer chosen	
+
+
+window.onload = function()
+ {			 				
+	var select = document.getElementById("my_select")
+	output = document.getElementById("output")	
+	confirmation();
+	function confirmation(){
+		total_questions = select.options[select.selectedIndex].value;
+		if(total_questions) {
+		  output.innerHTML = total_questions.toString();
+		}	
+	}			
+	select.onchange = function(){
+		confirmation();
+	};
+ };	
 
 // Call the load XML Document
 function start()
