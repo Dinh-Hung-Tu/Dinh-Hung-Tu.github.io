@@ -10,8 +10,7 @@ var answer = prompts_per_question; // Legitimate range for answer is (0<= to < p
 // Call the load XML Document
 function start()
 {	loadXMLDoc(); //Activate this line when running up in the server. Deactivate the line below	
-	//local(); //Activate this line to process local sample. Deactivate the line above
-	current = 0; //after every restart, reset the current counter to zero		
+	//local(); //Activate this line to process local sample. Deactivate the line above	
 	nextButton.disabled = false; 	
 }
 
@@ -27,6 +26,7 @@ function loadXMLDoc() //create dynamic content of the questions
 //This function returns two global variables: ques_bank and all_prompts_indexes (including unique stems and distractors)
 {
 	var xmlhttp;
+	current = 0; //after every restart, reset the current counter to zero		
 	if (window.XMLHttpRequest)
 	  {// code for IE7+, Firefox, Chrome, Opera, Safari
 	  xmlhttp=new XMLHttpRequest();
