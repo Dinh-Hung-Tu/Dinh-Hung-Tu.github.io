@@ -20,11 +20,12 @@ window.onload = function()
 	};
  };	
 
-// Call the load XML Document
+// Start doesn't call loadXMLDoc unless the main html fails to call; Start's role is primarily to sample random
 function start()
 {		
 	nextButton.disabled = false; // disable the next button
-	document.getElementById('quiz').style.visibility="visible"; //activate the 	
+	document.getElementById('quiz').style.visibility="visible"; //activate the QUIZ area	
+	document.getElementById('instruction').innerHTML = ""; //Clear instruction
 	correct_count = 0;
 	current = 0;	
 	//**********************************************
