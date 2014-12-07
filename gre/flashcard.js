@@ -9,8 +9,7 @@ var answer = prompts_per_question; // Legitimate range for answer is (0<= to < p
 
 // Call the load XML Document
 function start()
-{
-	loadXMLDoc(); //Activate this line when running up in the server. Deactivate the line below
+{	loadXMLDoc(); //Activate this line when running up in the server. Deactivate the line below	
 	//local(); //Activate this line to process local sample. Deactivate the line above
 	current = 0; //after every restart, reset the current counter to zero		
 	nextButton.disabled = false; 	
@@ -120,6 +119,7 @@ function submit()
 //Initialization upon page load
 function initialization()
 {
+	loadXMLDoc(); //Activate this line when running up in the server. Deactivate the line below
 	document.getElementById('quiz').style.visibility="hidden";
 	submitButton.disabled = true;
 	nextButton.disabled = true;
