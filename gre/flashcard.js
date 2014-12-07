@@ -6,6 +6,7 @@ var current = 0;
 var prompts_per_question = 3;
 var all_prompts_indexes = new Array(30);
 var answer = prompts_per_question; // Legitimate range for answer is (0<= to < prompts_per_question). Set this to be prompts_per_question means that there is no answer chosen	
+var population = Array.apply(null, {length: ques_bank.length}).map(Number.call, Number) //Array of 30 elements from 0:29
 
 
 window.onload = function()
@@ -21,6 +22,7 @@ window.onload = function()
 	}			
 	select.onchange = function(){
 		confirmation();
+		loadXMLDoc(); //Reset the population 
 	};
  };	
 
@@ -33,8 +35,8 @@ function start()
 
 function local() //This function is used to run locally on the client side
 {
-	ques_bank = ["abacus,frame with balls for calculating       	","abate,to lessen to subside        ","abdication,giving up control authority        ","aberration,straying away from what is normal      ","abet,help/encourage smb (in doing wrong)     ","abeyance,suspended action          ","abhor,to hate to detest        ","abide,be faithful to endure        ","abjure,promise or swear to give up      ","abraded,rubbed off worn away by friction      ","abrogate,repeal or annul by authority       ","abscond,to go away suddenly (to avoid arrest)     ","abstruse,difficult to comprehend obscure        "]
-	all_prompts_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+	ques_bank = ["abacus,frame with balls for calculating       	","abate,to lessen to subside        ","abdication,giving up control authority        ","aberration,straying away from what is normal      ","abet,help/encourage smb (in doing wrong)     ","abeyance,suspended action          ","abhor,to hate to detest        ","abide,be faithful to endure        ","abjure,promise or swear to give up      ","abraded,rubbed off worn away by friction      ","abrogate,repeal or annul by authority       ","abscond,to go away suddenly (to avoid arrest)     ","abstruse,difficult to comprehend obscure        ","abjure2,promise or swear to give up      ","abraded2,rubbed off worn away by friction      ","abrogate2,repeal or annul by authority       ","abscond2,to go away suddenly (to avoid arrest)     ","abstruse2,difficult to comprehend obscure        "]
+	all_prompts_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 	
 }
 
@@ -58,8 +60,7 @@ function loadXMLDoc() //create dynamic content of the questions
 		{
 		var text = xmlhttp.responseText; //text is a local variable. It takes effect only within this function's scope
 		
-		ques_bank=text.split('\n');		//If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.	
-		var population = Array.apply(null, {length: ques_bank.length}).map(Number.call, Number)									
+		ques_bank=text.split('\n');		//If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.												
 		//randomly sample 30 unique prompts (=prompts per question x total_questions) 
 		all_prompts_indexes = _.sample(population, prompts_per_question*total_questions); //till here, a set of unique question indexes is chosen.									
 		}
