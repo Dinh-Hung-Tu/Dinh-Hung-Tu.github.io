@@ -11,7 +11,8 @@ var incorrect = new Array();
 window.onload = function()
  {				
 	var select = document.getElementById("my_select")
-	output = document.getElementById("output")			
+	output = document.getElementById("output")	
+	total_questions = select.options[select.selectedIndex].value; // Initial onload must also trigger this value 
 	select.onchange = function()
 	{	
 		total_questions = select.options[select.selectedIndex].value; //Must reset the total questions after every change 
