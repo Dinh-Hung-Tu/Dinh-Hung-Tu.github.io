@@ -12,11 +12,10 @@ window.onload = function()
  {				
 	var select = document.getElementById("my_select")
 	output = document.getElementById("output")			
-	total_questions = select.options[select.selectedIndex].value;				
 	select.onchange = function()
 	{	
-		start();
-		total_questions = select.options[select.selectedIndex].value; //Must reset the total questions after every change
+		total_questions = select.options[select.selectedIndex].value; //Must reset the total questions after every change 
+		start(); //Reset size must be before the start() because start() draws a sample based on this size
 	};
  };	
 
