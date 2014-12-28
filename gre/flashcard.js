@@ -99,7 +99,7 @@ function question_display()
 	document.getElementById('main').disabled = true;
 	document.getElementById('result').innerHTML = ""; //Clear last result display
 	document.getElementById('idElaborate').innerHTML = "";//clear info about last search
-	//document.getElementById("audioButton").style.visibility = "hidden";
+	document.getElementById("audioButton").style.visibility = "hidden";
 	
 	myquiz.reset();
 	submitButton.disabled = false;
@@ -237,7 +237,7 @@ function elaborate()
 		});
 	getAudio(word,function(url){
 		$("#idAudio").html("<audio id = 'audiotag'> <source src=" + url+">"+ "</audio>");
-		//document.getElementById("audioButton").style.visibility = "visible";
+		document.getElementById("audioButton").style.visibility = "visible";
 		});	
 }
 
