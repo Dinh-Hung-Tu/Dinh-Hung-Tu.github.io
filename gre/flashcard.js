@@ -219,7 +219,7 @@ function elaborate()
 	var word = document.getElementById('main').innerHTML; //This variable is shared for all functions below. 
 	getSynonyms (word, function (synonym) 
 		{
-		var s1 = "Synonym: "; //String to output: Local variable
+		var s1 = "<b>Synonym:</b><br> "; //String to output: Local variable
 		for (var i = 0; i <synonym.length; i++) {
 			s1 += synonym [i] + " " //Add space between consecutive synonyms
 			}
@@ -229,7 +229,7 @@ function elaborate()
 	getExample (word, function (examples) 
 		{
 		var array = examples;
-		var s2 = "Examples: "; //Initialize string to output
+		var s2 = "<b>Examples:</b><br> "; //Initialize string to output
 		for (var i = 0; i <array.length; i++) {
 			s2 += "<li>" + array[i]["text"] + "</li><br>"} //Add an extra line between two examples
 		document.getElementById('idElaborate').innerHTML += s2 //Append the examples to elaboration
