@@ -8,7 +8,8 @@
 //Alignment for the example. 
 //Remove background because of the duplication when info extend
 //Add a block: behind the scene.
-
+//Update at 9:08pm
+//Flow control done. Attempted to justify alignment. Take 1 more try
 // Global variables are accessible by any functions below 
 var total_questions;
 var correct_count = 0;
@@ -98,6 +99,7 @@ function question_display()
 	document.getElementById('main').disabled = true;
 	document.getElementById('result').innerHTML = ""; //Clear last result display
 	document.getElementById('idElaborate').innerHTML = "";//clear info about last search
+	document.getElementById("audioButton").style.visibility = "hidden";
 	
 	myquiz.reset();
 	submitButton.disabled = false;
@@ -235,7 +237,7 @@ function elaborate()
 		});
 	getAudio(word,function(url){
 		$("#idAudio").html("<audio id = 'audiotag'> <source src=" + url+">"+ "</audio>");
-		document.getElementById("idAudio").style.visibility = "visible"
+		document.getElementById("audioButton").style.visibility = "visible";
 		});	
 }
 
