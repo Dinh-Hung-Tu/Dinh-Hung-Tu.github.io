@@ -231,8 +231,6 @@ function elaborate()
 		var s2 = "Examples: "; //Initialize string to output
 		for (var i = 0; i <array.length; i++) {
 			s2 += "<li>" + array[i]["text"] + "</li><br>"} //Add an extra line between two examples
-		s2 += "<br><br>" //Break a new line
-		//$("#idElaborate").html ("<ul>" + s + "</ul>");
 		document.getElementById('idElaborate').innerHTML += s2 //Append the examples to elaboration
 		});
 	getAudio(word,function(url){
