@@ -201,12 +201,12 @@ function initialization()
 function elaborate()
 {	//Keep word a local variable
 	var word = document.getElementById('main').innerHTML;
-	getSynonyms ("word", function (outwords) 
+	getSynonyms (word, function (synonym) 
 		{
-		var s = "Synonym :";
-		for (var i = 0; i <outwords.length; i++) {
-			s += outwords [i] + " "
+		var s = "Synonym :"; //String to output
+		for (var i = 0; i <synonym.length; i++) {
+			s += synonym [i] + " " //Add space between consecutive synonyms
 			}
-		$("#idElaborate").html ("<ul>" + s + "</ul>");	
+		$("#idElaborate").html(s);	
 		});
 }
