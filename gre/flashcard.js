@@ -38,6 +38,7 @@ function start()
 	nextButton.disabled = false; // disable the next button
 	document.getElementById('quiz').style.visibility="visible"; //activate the QUIZ area	
 	document.getElementById('instruction').innerHTML = ""; //Clear instruction
+	document.getElementById("audioButton").style.visibility = "hidden"; //hide the pronunciation button on start
 	correct_count = 0;
 	current = 0;	
 	//**********************************************
