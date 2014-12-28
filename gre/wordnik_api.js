@@ -11,7 +11,7 @@ function getSynonyms (theWord, callback) { //User-defined function
 		var array = JSON.parse (data); //This is an array
 		console.log (data);
 		try{
-		callback (array [0].words)
+		callback (array [0].words);
 		}
 		catch(err){
 		console.log("No synonym found from the HTML response");
@@ -32,7 +32,7 @@ function getAudio (theWord, callback) { //User-defined function
 		//var array2 = JSON.parse (data);
 		console.log (data);
 		try{
-		callback (data [0].fileUrl)
+		callback (data [0].fileUrl);
 		}
 		catch{
 		console.log("No audio found from the HTML response");
@@ -52,8 +52,8 @@ function getExample( theWord, callback) {
 	.success (function (data, status) { 
 		var object = JSON.parse (data); //This is an object
 		console.log (data);
-		tru{
-		callback(object["examples"])
+		try{
+		callback(object["examples"]);
 		}
 		catch{
 		console.log("No example found from the HTML response");

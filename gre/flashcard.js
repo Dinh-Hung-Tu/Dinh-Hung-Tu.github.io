@@ -207,22 +207,22 @@ function elaborate()
 	var word = document.getElementById('main').innerHTML; //This variable is shared for all functions below. 
 	getSynonyms (word, function (synonym) 
 		{
-		var s += "Synonym: "; //String to output
+		var s1 = "Synonym: "; //String to output: Local variable
 		for (var i = 0; i <synonym.length; i++) {
-			s += synonym [i] + " " //Add space between consecutive synonyms
+			s1 += synonym [i] + " " //Add space between consecutive synonyms
 			}
-		s += "<br>" //Break a new line
-		document.getElementById('idElaborate').innerHTML += s //Append the synonyms to elaboration
+		s1 += "<br>" //Break a new line
+		document.getElementById('idElaborate').innerHTML += s1 //Append the synonyms to elaboration
 		});
 	getExample (word, function (examples) 
 		{
 		var array = examples;
-		var s = "Examples: "; //Initialize string to output
+		var s2 = "Examples: "; //Initialize string to output
 		for (var i = 0; i <array.length; i++) {
-			s += "<li>" + array[i]["text"] + "</li>"}
-		s += "<br>" //Break a new line
+			s2 += "<li>" + array[i]["text"] + "</li>"}
+		s2 += "<br>" //Break a new line
 		//$("#idElaborate").html ("<ul>" + s + "</ul>");
-		document.getElementById('idElaborate').innerHTML += s //Append the examples to elaboration
+		document.getElementById('idElaborate').innerHTML += s2 //Append the examples to elaboration
 		});
 	
 }
