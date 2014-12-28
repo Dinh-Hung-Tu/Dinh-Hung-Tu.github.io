@@ -207,4 +207,5 @@ function elaborate()
 					s += outwords [i] + " "
 					}
 				$("#idElaborate").html ("<ul>" + s + "</ul>");	
+				}
 }
