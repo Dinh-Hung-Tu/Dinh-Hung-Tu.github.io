@@ -12,10 +12,10 @@ function getSynonyms (theWord, callback) { //User-defined function
 		console.log (data);
 		try{
 		callback (array [0].words);
-		}
-		catch(err){
-		console.log("No synonym found from the HTML response");
-		}
+			}
+			catch(err) {
+			console.log("No synonym found from the HTML response");
+			}
 		}) 
 	.error (function (status) { 
 		console.log ("getSynonyms: url == " + url + ", error == " + JSON.stringify (status, undefined, 4));
@@ -31,10 +31,10 @@ function getAudio (theWord, callback) { //User-defined function
 	.success (function (data, status) { 
 		//var array2 = JSON.parse (data);
 		console.log (data);
-		try{
+		try {
 		callback (data [0].fileUrl);
 		}
-		catch{
+		catch(err) {
 		console.log("No audio found from the HTML response");
 		}
 		}) 
@@ -55,7 +55,7 @@ function getExample( theWord, callback) {
 		try{
 		callback(object["examples"]);
 		}
-		catch{
+		catch(err) {
 		console.log("No example found from the HTML response");
 		}
 		}) 
