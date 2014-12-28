@@ -86,7 +86,7 @@ function loadXMLDoc() //create dynamic content of the questions
 		{
 		var text = xmlhttp.responseText; //text is a local variable. It takes effect only within this function's scope		
 		ques_bank=text.split('\n');		//If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.														
-		document.getElementById('status').innerHTML = "Question bank is successfully loaded."; //Clear last result display
+		document.getElementById('status').innerHTML = "<i>Question bank is successfully loaded.</i>"; //Clear last result display
 	  }
 	}
 	xmlhttp.open("GET","wordlist.txt",true);
