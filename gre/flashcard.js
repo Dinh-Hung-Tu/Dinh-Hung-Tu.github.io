@@ -199,13 +199,14 @@ function initialization()
 }
 //Add the function for elaboration
 function elaborate()
-{
-	word = document.getElementById('main').innerHTML;
-	getSynonyms ("word", function (outwords) {
-				var s = "Synonym :";
-				for (var i = 0; i <outwords.length; i++) {
-					s += outwords [i] + " "
-					}
-				$("#idElaborate").html ("<ul>" + s + "</ul>");	
-				}
+{	//Keep word a local variable
+	var word = document.getElementById('main').innerHTML;
+	getSynonyms ("word", function (outwords) 
+		{
+		var s = "Synonym :";
+		for (var i = 0; i <outwords.length; i++) {
+			s += outwords [i] + " "
+			}
+		$("#idElaborate").html ("<ul>" + s + "</ul>");	
+		}
 }
