@@ -2,6 +2,13 @@
 //Error handling for request that found no response [] such as no synonym for ambidextrous. This case: showing the other information suffice. 
 //Add audio and word example refresh. Possibly extend to keep the list on WordNik
 
+// Update at 7:30pm
+//Audio is incorporated into the js but still not working, probably the error is visibility of the HREF
+//More info should be disabled except before the submit()  and after first click on moreinfo.
+//Alignment for the example. 
+//Remove background because of the duplication when info extend
+//Add a block: behind the scene.
+
 // Global variables are accessible by any functions below 
 var total_questions;
 var correct_count = 0;
@@ -90,11 +97,12 @@ function question_display()
 	document.getElementById('quiz').style.visibility="visible"; //activate the 		
 	document.getElementById('main').disabled = true;
 	document.getElementById('result').innerHTML = ""; //Clear last result display
+	document.getElementById('idElaborate').innerHTML = "";//clear info about last search
 	
 	myquiz.reset();
 	submitButton.disabled = false;
 	nextButton.disabled = true;			
-	
+	elaborateButton.disabled = true;
 	//Set question vs revision question
 	if (current<total_questions) {document.getElementById('order').innerHTML = "Question "+(current+1).toString()+":";}
 	else 
@@ -163,7 +171,7 @@ function submit()
 			//push the index of wrong question
 			incorrect.push(key_index); //every wrong choice will add into the incorrect set for revision
 		}
-		
+		elaborateButton.disabled = false;
 		submitButton.disabled = true;
 		nextButton.disabled = false;
 		answer = prompts_per_question; //this is to clear the variable answer in next question
@@ -204,6 +212,7 @@ function initialization()
 //Add the function for elaboration
 function elaborate()
 {	//Keep word a local variable
+	elaborateButton.disabled = true;
 	var word = document.getElementById('main').innerHTML; //This variable is shared for all functions below. 
 	getSynonyms (word, function (synonym) 
 		{
