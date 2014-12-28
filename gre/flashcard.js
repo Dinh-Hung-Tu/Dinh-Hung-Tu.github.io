@@ -1,3 +1,7 @@
+//TODO: clear synonym every question_display() to clear old entry. Control flow of the buttons
+//Error handling for request that found no response [] such as no synonym for ambidextrous. This case: showing the other information suffice. 
+//Add audio and word example refresh. Possibly extend to keep the list on WordNik
+
 // Global variables are accessible by any functions below 
 var total_questions;
 var correct_count = 0;
@@ -200,13 +204,25 @@ function initialization()
 //Add the function for elaboration
 function elaborate()
 {	//Keep word a local variable
-	var word = document.getElementById('main').innerHTML;
+	var word = document.getElementById('main').innerHTML; //This variable is shared for all functions below. 
 	getSynonyms (word, function (synonym) 
 		{
-		var s = "Synonym :"; //String to output
+		var s += "Synonym: "; //String to output
 		for (var i = 0; i <synonym.length; i++) {
 			s += synonym [i] + " " //Add space between consecutive synonyms
 			}
-		$("#idElaborate").html(s);	
+		s += "<br>" //Break a new line
+		document.getElementById('idElaborate').innerHTML += s //Append the synonyms to elaboration
 		});
+	getExample (word, function (examples) 
+		{
+		var array = examples;
+		var s = "Examples: "; //Initialize string to output
+		for (var i = 0; i <array.length; i++) {
+			s += "<li>" + array[i]["text"] + "</li>"}
+		s += "<br>" //Break a new line
+		//$("#idElaborate").html ("<ul>" + s + "</ul>");
+		document.getElementById('idElaborate').innerHTML += s //Append the examples to elaboration
+		});
+	
 }
