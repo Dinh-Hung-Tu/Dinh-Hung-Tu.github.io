@@ -4,12 +4,12 @@ html {
 body {
 	font-family: "Bitstream Vera Sans",Verdana,Arial,Helvetica,Sans,"Bitstream Vera Serif";
 	font-size: 1em;
-	max-width: 100%;
-	max-height: 100%;
+	max-width: 1360px;
+	max-height: 600px;
 	color: #000000;
 	margin: 0px;
-	background-image:url('plane.png');
-	background-repeat:repeat-y;
+	background-image:url('pen.png');
+	background-repeat:no-repeat;
 	background-size:cover;
 }
 
