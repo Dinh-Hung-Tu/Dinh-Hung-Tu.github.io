@@ -211,7 +211,7 @@ function elaborate()
 		for (var i = 0; i <synonym.length; i++) {
 			s1 += synonym [i] + " " //Add space between consecutive synonyms
 			}
-		s1 += "<br>" //Break a new line
+		s1 += "<br><br>" //Break a new line
 		document.getElementById('idElaborate').innerHTML += s1 //Append the synonyms to elaboration
 		});
 	getExample (word, function (examples) 
@@ -219,10 +219,18 @@ function elaborate()
 		var array = examples;
 		var s2 = "Examples: "; //Initialize string to output
 		for (var i = 0; i <array.length; i++) {
-			s2 += "<li>" + array[i]["text"] + "</li>"}
-		s2 += "<br>" //Break a new line
+			s2 += "<li>" + array[i]["text"] + "</li><br>"} //Add an extra line between two examples
+		s2 += "<br><br>" //Break a new line
 		//$("#idElaborate").html ("<ul>" + s + "</ul>");
 		document.getElementById('idElaborate').innerHTML += s2 //Append the examples to elaboration
 		});
-	
+	getAudio(word,function(url){
+		$("#idAudio").html("<audio id = 'audiotag'> <source src=" + url+">"+ "</audio>");
+		document.getElementById("idAudio").style.visibility = "visible"
+		});	
+}
+
+function play_audio()
+{
+	audiotag.play();
 }
