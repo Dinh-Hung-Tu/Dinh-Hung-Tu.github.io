@@ -104,7 +104,6 @@ function start() {
 	mytext.value = "";
 	setTimeout(function(){alert("10 minutes remaining")},1200000);
 	setTimeout(function(){alert("5 minutes remaining")},1500000);
-	setTimeout(function(){alert("5 minutes remaining")},1500000);
 }
 
 function formSubmit(){
