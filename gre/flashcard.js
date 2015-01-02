@@ -131,8 +131,8 @@ function question_display()
 		else if (incorrect.length!=0) {key_index = incorrect.shift();} //in revision mode
 	//Set the stem
 	document.getElementById('main').innerHTML = ques_bank[all_prompts_indexes[key_index]].split(',')[0];
-	//Set the true answer
-	document.getElementById(key.toString()).innerHTML = ques_bank[all_prompts_indexes[key_index]].split(',')[1];
+	//Set the true answer: Change to slice method to cater for the case when definition contains multiple instance splitted by ','
+	document.getElementById(key.toString()).innerHTML = ques_bank[all_prompts_indexes[key_index]].split(',').slice(1); 
 		
 	//Loop thru the prompts_per_question (3 choices in this case), set the 3 prompts
 	var count = 0;
