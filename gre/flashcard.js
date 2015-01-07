@@ -170,7 +170,7 @@ function submit()
 		}
 		else 
 		{
-			document.getElementById('result').innerHTML = "Incorrect!"+" Correct answer is: " + ques_bank[all_prompts_indexes[key_index]].split(',')[1];
+			document.getElementById('result').innerHTML = "Incorrect!"+" Correct answer is: " + ques_bank[all_prompts_indexes[key_index]].split(',').slice1(1);
 			//push the index of wrong question
 			incorrect.push(key_index); //every wrong choice will add into the incorrect set for revision
 		}
