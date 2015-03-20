@@ -1,0 +1,71 @@
+<html>
+<head>
+<link rel="stylesheet" title="screen stylesheet" type="text/css" media="screen" href="../style.css" />
+<title>GRE Writing</title>
+<script src="gre.js"></script>
+<style>
+  body {    
+  	position: relative;
+  	top: 25px;
+  	left: 5%;
+  	width: 30%;
+      word-wrap: break-word;
+  	}
+</style>
+<script>
+function loadXMLDoc() //create dynamic content of the questions
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    text = xmlhttp.responseText;
+    output=text.split('<div class="divider-50">');
+    var item = output[Math.floor(Math.random()*output.length)];
+    document.getElementById('main').innerHTML = item;
+    }
+  }
+xmlhttp.open("GET","pool.txt",true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body onload="show();">
+<h3>GRE Analytical Writing</h3>
+<h3>On the way to get 4.5 Writing !</h3>
+<p>Practice makes perfect!</p>
+<input type="button" value="START" id="startButton" onclick="start();">	
+</br>
+</br>
+<div>Time remaining: <span id="time"></span></div>
+</br>
+Name <input type="text" name="name" ></br>
+</br>
+Email <input type="string" name="Email" ></br>
+</br>
+<!This is a comment>
+<form action="MAILTO:dinhhungtu@gmail.com?Subject=GRE%20Essay%20Submission"  method="post" id="ismForm" name="ismForm" enctype="text/plain">
+<div class = "main">
+    <p id = "main">[...Writing prompt will be unveiled here...]</p>
+    </div>
+<textarea id="mytext" name="Essay" cols="70" rows="30" spellcheck="false" disabled = "disabled" style = "font-size:18px">
+Enter your response in this canvas. 
+</textarea>
+<p></p>
+<div class ="main">
+<p class = "main">If you finish the essay before time limit expires, you may submit by clicking the button below:</p>
+</div>
+</br></br>
+<input type="submit" id = "submitButton" value="Email your response" ></br>
+</form>
+</body>
+</html>
