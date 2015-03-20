@@ -71,6 +71,10 @@ h3 {
 	font-size: 1.5em; 
 	letter-spacing:-2px;
 }
+h3.img-intext {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}	
 p.main {
 	text-align: justify;
 }
