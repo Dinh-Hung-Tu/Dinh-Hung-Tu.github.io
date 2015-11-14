@@ -8,7 +8,7 @@ function draw_opacity()
 	subPatches=document.getElementsByClassName('pic')[0].children
 	for (i=0;i<subPatches.length;i++){
 		if(i==overlay)
-			subPatches[i].style.opacity=score/100;	
+			subPatches[i].style.opacity=1-score/100;	
 		else
 			subPatches[i].style.opacity=0;				
 	}
