@@ -9,16 +9,15 @@
 .pic{ 	
 	position:relative; 
 	top: 0px;
-	left: 0px;
-	width: 1362px;
+	left: 0px;	
 	height:918px; 
 	background: url(images/patheon.jpg) no-repeat; 	
+	background-size:cover;
 	} 
 .pic .pride
 	{ 
 	position:absolute; 
-	top:0px;
-	width:1362px; 
+	top:0px;	
 	height:918px;
 	min-width:100%;
 	min-height:100%;	
@@ -30,8 +29,7 @@
 .pic .flag 
 	{ 
 	position:absolute; 
-	top:0px;
-	width:1362px; 
+	top:0px;	
 	height:918px;
 	min-width:100%;
 	min-height:100%;	
@@ -44,6 +42,9 @@
 .pic:hover .flag { opacity:0; } </style> </head> 
 <body> 
 <br>
+<h3>How does a picture evolve with filter?</h3>
+<span>Select a template (also called "overlay" or "filter") and adjust the transparency</span><br>
+<span>Chọn bộ lọc cho hình và thay đổi độ trong suốt</span><br>
 <img src = "images/flagIcon.png" alt = "France flag icon" style = "width:30px;height:30px">
 <input type="radio" name="overlay" value="1" onclick="overlay_select()" checked > #PrayForFrance
 <span style="position:relative;left:100px">Move the slider below/Di chuyển thanh trượt bên dưới</span><br>
